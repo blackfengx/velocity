@@ -11,6 +11,9 @@ django.setup()
 
 # Import models from service_rest, here.
 # from service_rest.models import Something
+from service_rest.models import AutomobileVO
+
+
 
 def poll():
     while True:
