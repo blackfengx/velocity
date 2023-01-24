@@ -1,5 +1,9 @@
 {
     "python.analysis.extraPaths": [
+<<<<<<< HEAD
         "./sales/api"
+=======
+        "./service/api"
+>>>>>>> 01be3b644d8f2b280ee1298222445dcc0b74a3ca
     ]
 }

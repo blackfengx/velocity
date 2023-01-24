@@ -2,16 +2,15 @@
 
 Team:
 
-* Person 1 - Which microservice?
 * Person 2 - Bradley Daniels - Sales
+* Person 1 - Braden Towns - Service
 
 ## Design
 
 ## Service microservice
 
-Explain your models and integration with the inventory
-microservice, here.
+<!-- Explain your models and integration with the inventory
+microservice, here. -->
+
 
 ## Sales microservice
-
-
