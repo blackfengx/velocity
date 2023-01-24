@@ -17,9 +17,8 @@ function App() {
           <Route path="/manufacturers" element={<ManufacturerList />} />
           <Route path="/manufacturers/create" element={<ManufacturerForm/>} />
           <Route path="/technicians" element={<TechnicianList />} />
-        </Routes>
-        <Routes>
           <Route path="/salesperson" element={<SalespersonList />} />
+          <Route path="/salesperson/create" element={<SalespersonForm />} />
         </Routes>
       </div>
     </BrowserRouter>

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function SalespersonList() {
     const [salesperson, setSalesperson] = useState([])
@@ -17,16 +18,18 @@ function SalespersonList() {
     }, [])
 
     return (
+        <>
         <table className="table table-striped">
             <thead>
                 <tr>
-                    <th>Salespeople</th>
+                    <th>Name</th>
+                    <th>Employee Number</th>
                 </tr>
             </thead>
         <tbody>
-        {salesperson.map((salesperson, index) => {
+        {salesperson.map(salesperson => {
           return (
-            <tr key={index}>
+            <tr key={salesperson.name}>
               <td>{ salesperson.name }</td>
               <td>{ salesperson.employee_number }</td>
             </tr>
@@ -34,6 +37,10 @@ function SalespersonList() {
         })}
       </tbody>
     </table>
+    <div className="d-grid gap-2 d-sm-flex justify-content-sm-center">
+        <Link to="/manufacturers/create" className="btn btn-primary btn-lg px-4 gap-3">Create a Manufacturer</Link>
+    </div>
+        </>
     )
 }
 export default SalespersonList
