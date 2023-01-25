@@ -3,7 +3,7 @@ from django.urls import reverse
 
 class AutomobileVO(models.Model):
     import_href = models.CharField(max_length=200, unique=True)
-    color = models.CharField(max_length=100)
+    color = models.CharField(max_length=50)
     year = models.PositiveSmallIntegerField()
     vin = models.CharField(max_length=17, unique=True)
 
@@ -20,7 +20,7 @@ class SalesRecord(models.Model):
     automobile = models.ForeignKey(
         AutomobileVO,
         related_name="automobile",
-        on_delete=models.CASCADE
+        on_delete=models.CASCADE,
         )
     salesperson = models.CharField(max_length=100)
     customer = models.CharField(max_length=100)

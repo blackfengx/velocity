@@ -7,21 +7,17 @@ from common.json import ModelEncoder
 
 # Create your encoders here.
 
+class AutomobileDetailEncoder(ModelEncoder):
+    model = AutomobileVO
+    properties = [
+        "vin"
+    ]
+
 class SalespersonListEncoder(ModelEncoder):
     model = Salesperson
     properties = [
         "name",
         "employee_number",
-        "id"
-    ]
-
-class SalesRecordListEncoder(ModelEncoder):
-    model = SalesRecord
-    properties = [
-        "automobile",
-        "salesperson",
-        "customer",
-        "sale_price",
         "id"
     ]
 
@@ -33,6 +29,19 @@ class PotentialCustomerListEncoder(ModelEncoder):
         "phone_number",
         "id"
     ]
+
+class SalesRecordListEncoder(ModelEncoder):
+    model = SalesRecord
+    properties = [
+        "automobile",
+        "salesperson",
+        "customer",
+        "sale_price",
+        "id",
+    ]
+    encoders = {
+        "automobile": AutomobileDetailEncoder(),
+    }
 
 # Create your views here.
 
@@ -59,12 +68,15 @@ def api_list_sales_record(request, pk=id):
         encoder=SalesRecordListEncoder)
     else:
         content = json.loads(request.body)
-        salesrecord = SalesRecord.objects.create(**content)
+        vin = content["automobile"]
+        vin = AutomobileVO.objects.get(vin=vin)
+        content["automobile"] = vin
+        sales_record = SalesRecord.objects.create(**content)
         return JsonResponse(
-            salesrecord,
+            sales_record,
             encoder=SalesRecordListEncoder,
             safe=False,
-        )
+    )
 
 @require_http_methods(["DELETE", "GET", "PUT", "POST"])
 def api_list_potential_customer(request, pk=id):
