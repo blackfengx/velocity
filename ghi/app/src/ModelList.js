@@ -2,7 +2,7 @@ import Nav from './Nav';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-function VehicleList() {
+function ModelList() {
   const [models, setModels] = useState([])
 
   const getData = async () => {
@@ -61,10 +61,10 @@ function VehicleList() {
           </tbody>
         </table>
         <div className="d-grid gap-2 d-sm-flex justify-content-sm-center">
-            <Link to="/models/new" className="btn btn-primary btn-lg px-4 gap-3">Create a New Vehicle Model</Link>
+            <Link to="/vehicle/model/create" className="btn btn-primary btn-lg px-4 gap-3">Create a New Vehicle Model</Link>
         </div>
         </>
     );
   }
 
-  export default VehicleList;
+  export default ModelList;
