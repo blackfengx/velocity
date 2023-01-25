@@ -32,7 +32,7 @@ function SalesRecordList() {
         {sales_record.map(sales_record => {
           return (
             <tr key={sales_record.name}>
-              <td>{ sales_record.automobile }</td>
+              <td>{ sales_record.automobile.vin }</td>
               <td>{ sales_record.salesperson }</td>
               <td>{ sales_record.customer }</td>
               <td>{ sales_record.sale_price }</td>

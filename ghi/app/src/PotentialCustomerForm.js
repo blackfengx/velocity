@@ -3,7 +3,8 @@ import React, {useState, useEffect} from 'react';
 function PotentialCustomerForm() {
   const [formData, setFormData] = useState({
     name: '',
-    employee_number: '',
+    address: '',
+    phone_number: '',
   })
 
   const handleSubmit = async (event) => {
@@ -24,7 +25,9 @@ function PotentialCustomerForm() {
     if (response.ok) {
       setFormData({
         name: '',
-        employee_number: '',
+        address: '',
+        phone_number: '',
+
       });
     }
   }
@@ -54,16 +57,12 @@ function PotentialCustomerForm() {
               <label htmlFor="name">Name</label>
             </div>
             <div className="form-floating mb-3">
-              <input onChange={handleFormChange} value={formData.employee_number} placeholder="Employee Number" required type="text" name="employee_number" id="employee_number" className="form-control" />
+              <input onChange={handleFormChange} value={formData.address} placeholder="Address" required type="text" name="address" id="address" className="form-control" />
               <label htmlFor="name">Address</label>
             </div>
             <div className="form-floating mb-3">
-              <input onChange={handleFormChange} value={formData.employee_number} placeholder="Employee Number" required type="text" name="employee_number" id="employee_number" className="form-control" />
+              <input onChange={handleFormChange} value={formData.phone_number} placeholder="Phone Number" required type="text" name="phone_number" id="phone_number" className="form-control" />
               <label htmlFor="name">Phone Number</label>
-            </div>
-            <div className="form-floating mb-3">
-              <input onChange={handleFormChange} value={formData.employee_number} placeholder="Employee Number" required type="text" name="employee_number" id="employee_number" className="form-control" />
-              <label htmlFor="name">ID</label>
             </div>
             <button className="btn btn-primary">Create</button>
           </form>
