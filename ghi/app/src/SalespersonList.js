@@ -38,7 +38,7 @@ function SalespersonList() {
       </tbody>
     </table>
     <div className="d-grid gap-2 d-sm-flex justify-content-sm-center">
-        <Link to="/manufacturers/create" className="btn btn-primary btn-lg px-4 gap-3">Create a Manufacturer</Link>
+        <Link to="/salesperson/create" className="btn btn-primary btn-lg px-4 gap-3">Create a Salesperson</Link>
     </div>
         </>
     )
