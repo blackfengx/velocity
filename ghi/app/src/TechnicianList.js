@@ -4,8 +4,10 @@ import { Link } from 'react-router-dom';
 function TechnicianList() {
     const [technicians, setTechnicians] = useState([])
 
+
     const getData = async () => {
       const response = await fetch('http://localhost:8080/api/technicians/');
+      console.log(response)
 
       if (response.ok) {
         const data = await response.json();
@@ -16,22 +18,22 @@ function TechnicianList() {
       getData()
     }, [])
 
-    const deleteHat = async (id) => {
-      const response= await fetch(`http://localhost:8080/api/technicians/${id}/`, {
-        method: 'DELETE',
-        mode: "cors",
-        headers: {
-          "Content-Type": "application/json"
-        }
-      })
-      const data = await response.json()
-      console.log("manufacturer deleted")
-        setTechnicians(
-          technicians.filter((technician) =>{
-            return technician.id !== id;
-          })
-        )
-    }
+    // const deleteHat = async (id) => {
+    //   const response= await fetch(`http://localhost:8080/api/technicians/${id}/`, {
+    //     method: 'DELETE',
+    //     mode: "cors",
+    //     headers: {
+    //       "Content-Type": "application/json"
+    //     }
+    //   })
+    //   const data = await response.json()
+    //   console.log("manufacturer deleted")
+    //     setTechnicians(
+    //       technicians.filter((technician) =>{
+    //         return technician.id !== id;
+    //       })
+    //     )
+    // }
 
       return (
           <>
@@ -39,6 +41,7 @@ function TechnicianList() {
             <thead>
               <tr>
                 <th>Name</th>
+                <th>Employee Number</th>
               </tr>
             </thead>
             <tbody>
@@ -48,10 +51,10 @@ function TechnicianList() {
                     <td>{ technician.name }</td>
                     <td>{ technician.employee_number }</td>
 
-                    <td>
+                    {/* <td>
                       <button onClick={() => deleteHat(technician.id)}>Delete</button>
-                      {/* <button onClick={() => editHat(hat.id)}>Edit</button> */}
-                    </td>
+                      <button onClick={() => editHat(hat.id)}>Edit</button>
+                    </td> */}
                   </tr>
                 );
               })}
