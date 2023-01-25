@@ -6,6 +6,20 @@ from common.json import ModelEncoder
 import json
 
 
+class VinDetailEncoder(ModelEncoder):
+    model = AutomobileVO
+    properties = [
+        "vin"
+    ]
+
+
+class TechnicianDetailEncoder(ModelEncoder):
+    model = Technician
+    properties = [
+        "name",
+        "employee_number",
+    ]
+
 class AppointmentDetailEncoder(ModelEncoder):
     model = Appointment
     properties = [
@@ -16,13 +30,10 @@ class AppointmentDetailEncoder(ModelEncoder):
         "reason",
         "vin_num",
     ]
-
-class TechnicianDetailEncoder(ModelEncoder):
-    model = Technician
-    properties = [
-        "name",
-        "employee_number",
-    ]
+    encoders = {
+        "technician": TechnicianDetailEncoder(),
+        "vin_num": VinDetailEncoder(),
+    }
 
 
 
@@ -35,6 +46,12 @@ def api_list_appointments(request, pk=id):
         return JsonResponse({"appointments": appointments}, encoder=AppointmentDetailEncoder)
     else:
         content = json.loads(request.body)
+        technician_name = content["technician"]
+        technician = Technician.objects.get(name=technician_name)
+        content["technician"] = technician
+        vin = content["vin_num"]
+        vin = AutomobileVO.objects.get(vin=vin)
+        content["vin_num"] = vin
         appointments = Appointment.objects.create(**content)
         return JsonResponse(
             appointments,
