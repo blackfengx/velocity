@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 class AutomobileVO(models.Model):
     import_href = models.CharField(max_length=200, unique=True)
@@ -24,3 +25,6 @@ class SalesRecord(models.Model):
     salesperson = models.CharField(max_length=100)
     customer = models.CharField(max_length=100)
     sale_price = models.CharField(max_length=100)
+
+    def get_api_url(self):
+        return reverse("api_list_sales_record", kwargs={"pk": self.pk})

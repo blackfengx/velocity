@@ -7,7 +7,6 @@ from .views import (
 )
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
     path(
         "salesperson/",
         api_list_salesperson,
