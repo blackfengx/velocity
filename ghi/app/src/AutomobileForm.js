@@ -4,29 +4,32 @@ import React, {useState, useEffect} from 'react';
 function AutomobileForm() {
   const [automobiles, setAutomobiles] = useState([])
   const [manufacturers, setManufacturers] = useState([])
+  const [models, setModels] = useState([])
   const [formData, setFormData] = useState({
     vin: '',
     color: '',
     year: '',
-    model_name: '',
-    manufacturer: '',
+    // manufacturer: '',
+    model_id: '',
   })
 
-  const getData = async () => {
-    const url = 'http://localhost:8100/api/manufacturers/';
+
+
+  const getModelData = async () => {
+    const url = 'http://localhost:8100/api/models/';
     const response = await fetch(url);
 
     if (response.ok) {
       const data = await response.json();
-      setManufacturers(data.manufacturers);
+      setModels(data.models);
     }
   }
 
   useEffect(() => {
-    getData();
+    getModelData();
   }, []);
 
-//   const getModel = async () => {
+//   const getManufacturerData = async () => {
 //     const url = 'http://localhost:8100/api/manufacturers/';
 //     const response = await fetch(url);
 
@@ -37,7 +40,7 @@ function AutomobileForm() {
 //   }
 
 //   useEffect(() => {
-//     getData();
+//     getManufacturerData();
 //   }, []);
 
   const handleSubmit = async (event) => {
@@ -60,7 +63,8 @@ function AutomobileForm() {
         vin: '',
         color: '',
         year: '',
-        manufacturer: '',
+        // manufacturer: '',
+        model_id: '',
       });
     }
   }
@@ -97,20 +101,22 @@ function AutomobileForm() {
               <input onChange={handleFormChange} value={formData.year} placeholder="Year" required type="text" name="year" id="year" className="form-control" />
               <label htmlFor="name">Year</label>
             </div>
-            <div className="mb-3">
-              {/* <select onChange={handleFormChange} value={formData.manufacturer.name} required name="manufacturer_id" id="manufacturer_id" className="form-select">
+            {/* <div className="mb-3">
+              <select onChange={handleFormChange} value={formData.manufacturer.name} required name="manufacturer_id" id="manufacturer_id" className="form-select">
                 <option value="">Choose a manufacturer</option>
                 {manufacturers.map(manufacturer => {
                   return (
                     <option key={manufacturer.id} value={manufacturer.id}>{manufacturer.name}</option>
                   )
                 })}
-              </select> */}
-              <select onChange={handleFormChange} value={formData.manufacturer.name} required name="manufacturer_id" id="manufacturer_id" className="form-select">
-                <option value="">Choose a manufacturer</option>
-                {manufacturers.map(manufacturer => {
+              </select>
+            </div> */}
+            <div>
+              <select onChange={handleFormChange} value={formData.model_id.name} required name="model_id" id="model_id" className="form-select">
+                <option value="">Choose a Model</option>
+                {models.map(model => {
                   return (
-                    <option key={manufacturer.id} value={manufacturer.id}>{manufacturer.name}</option>
+                    <option key={model.id} value={model.id}>{model.name}</option>
                   )
                 })}
               </select>
