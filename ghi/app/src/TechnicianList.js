@@ -18,23 +18,6 @@ function TechnicianList() {
       getData()
     }, [])
 
-    // const deleteHat = async (id) => {
-    //   const response= await fetch(`http://localhost:8080/api/technicians/${id}/`, {
-    //     method: 'DELETE',
-    //     mode: "cors",
-    //     headers: {
-    //       "Content-Type": "application/json"
-    //     }
-    //   })
-    //   const data = await response.json()
-    //   console.log("manufacturer deleted")
-    //     setTechnicians(
-    //       technicians.filter((technician) =>{
-    //         return technician.id !== id;
-    //       })
-    //     )
-    // }
-
       return (
           <>
           <table className="table table-striped">
@@ -50,18 +33,13 @@ function TechnicianList() {
                   <tr key={technician.name}>
                     <td>{ technician.name }</td>
                     <td>{ technician.employee_number }</td>
-
-                    {/* <td>
-                      <button onClick={() => deleteHat(technician.id)}>Delete</button>
-                      <button onClick={() => editHat(hat.id)}>Edit</button>
-                    </td> */}
                   </tr>
                 );
               })}
             </tbody>
           </table>
           <div className="d-grid gap-2 d-sm-flex justify-content-sm-center">
-              <Link to="/technician/create" className="btn btn-primary btn-lg px-4 gap-3">Create a Technician</Link>
+              <Link to="/technicians/create" className="btn btn-primary btn-lg px-4 gap-3">Create a Technician</Link>
           </div>
           </>
       );
