@@ -7,6 +7,21 @@ from common.json import ModelEncoder
 
 # Create your encoders here.
 
+class SalespersonEncoder(ModelEncoder):
+    model = Salesperson
+    properties = [
+        "name",
+        "employee_number",
+    ]
+
+class PotentialCustomerEncoder(ModelEncoder):
+    model = PotentialCustomer
+    properties = [
+        "name",
+        "address",
+        "phone_number",
+    ]
+
 class AutomobileDetailEncoder(ModelEncoder):
     model = AutomobileVO
     properties = [
@@ -41,6 +56,8 @@ class SalesRecordListEncoder(ModelEncoder):
     ]
     encoders = {
         "automobile": AutomobileDetailEncoder(),
+        "salesperson": SalespersonEncoder(),
+        "customer": PotentialCustomerEncoder(),
     }
 
 # Create your views here.
@@ -71,6 +88,12 @@ def api_list_sales_record(request, pk=id):
         vin = content["automobile"]
         vin = AutomobileVO.objects.get(vin=vin)
         content["automobile"] = vin
+        name = content["salesperson"]
+        name = Salesperson.objects.get(name=name)
+        content["salesperson"] = name
+        customer = content["customer"]
+        customer = PotentialCustomer.objects.get(name=customer)
+        content["customer"] = customer
         sales_record = SalesRecord.objects.create(**content)
         return JsonResponse(
             sales_record,
@@ -97,5 +120,10 @@ def api_list_potential_customer(request, pk=id):
 @require_http_methods(["DELETE", "GET", "PUT", "POST"])
 def api_list_history(request, pk=id):
     if request.method == "GET":
-        salesperson = Salesperson.objects.get(id=pk)
-        return JsonResponse({"salesperson": salesperson}, encoder=SalespersonListEncoder)
+        try:
+            salesperson = Salesperson.objects.get(id=pk)
+            return JsonResponse({"salesperson": salesperson}, encoder=SalespersonListEncoder)
+        except Salesperson.DoesNotExist:
+            response = JsonResponse({"message": "Invalid Salesperson"})
+            response.status_code = 404
+            return response

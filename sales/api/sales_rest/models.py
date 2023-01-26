@@ -22,8 +22,16 @@ class SalesRecord(models.Model):
         related_name="automobile",
         on_delete=models.CASCADE,
         )
-    salesperson = models.CharField(max_length=100)
-    customer = models.CharField(max_length=100)
+    salesperson = models.ForeignKey(
+        Salesperson,
+        related_name="salesperson",
+        on_delete=models.CASCADE,
+        )
+    customer = models.ForeignKey(
+        PotentialCustomer,
+        related_name="customer",
+        on_delete=models.CASCADE,
+        )
     sale_price = models.CharField(max_length=100)
 
     def get_api_url(self):
