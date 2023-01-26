@@ -28,7 +28,7 @@ function App() {
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/manufacturers" element={<ManufacturerList />} />
-          <Route path="/manufacturers/create" element={<ManufacturerForm/>} />
+          <Route path="/manufacturers/create" element={<ManufacturerForm />} />
           <Route path="/technicians" element={<TechnicianList />} />
           <Route path="/technicians/create" element={<TechnicianForm />} />
           <Route path="/vehicle/model" element={<ModelList />} />

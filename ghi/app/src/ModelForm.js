@@ -1,5 +1,5 @@
 
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 
 function ModelForm() {
   const [manufacturers, setManufacturers] = useState([])
@@ -56,10 +56,6 @@ function ModelForm() {
       [inputName]: value
     });
   }
-
-
-
-
 
   return (
     <div className="row">
