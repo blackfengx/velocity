@@ -24,25 +24,27 @@ function SalesRecordList() {
                 <tr>
                     <th>Automobile</th>
                     <th>Salesperson</th>
+                    <th>Employee Number</th>
                     <th>Customer</th>
                     <th>Sale Price</th>
                 </tr>
             </thead>
         <tbody>
         {sales_record.map(sales_record => {
-        // return (
-        //     <tr key={sales_record.name}>
-        //       <td>{ sales_record.automobile.vin }</td>
-        //       <td>{ sales_record.salesperson }</td>
-        //       <td>{ sales_record.customer }</td>
-        //       <td>{ sales_record.sale_price }</td>
-        //     </tr>
-        //   );
+        return (
+            <tr key={sales_record.id}>
+              <td>{ sales_record.automobile.vin }</td>
+              <td>{ sales_record.salesperson.name }</td>
+              <td>{ sales_record.salesperson.employee_number }</td>
+              <td>{ sales_record.customer.name }</td>
+              <td>{ sales_record.sale_price }</td>
+            </tr>
+          );
         })}
       </tbody>
     </table>
     <div className="d-grid gap-2 d-sm-flex justify-content-sm-center">
-        <Link to="/sales_record/create" className="btn btn-primary btn-lg px-4 gap-3">Create a Sale Record</Link>
+        <Link to="/salesrecord/create" className="btn btn-primary btn-lg px-4 gap-3">Create a Sale Record</Link>
     </div>
         </>
     )
