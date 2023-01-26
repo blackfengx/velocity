@@ -11,8 +11,8 @@ React Front-End / Django Back-End / PostgreSQL
 
 ## Service microservice
 
-<!-- Explain your models and integration with the inventory
-microservice, here. -->
+- Created an AutomobileVO, Technician and Appointment model so that I could use the properties on each in order to populate a react front end.
+- The user should be able to use dynamic forms and lists on the website to manage their car dealership.
 
 
 ## Sales microservice

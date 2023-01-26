@@ -16,21 +16,21 @@ function ModelList() {
     getData()
   }, [])
 
-  const deletemodel = async (id) => {
-    const response = await fetch(`http://localhost:8090/api/models/${id}/`, {
-      method: 'DELETE',
-      mode: "cors",
-      headers: {
-        "Content-Type": "application/json"
-      }
-    })
-    const data = await response.json()
-    setModels(
-      models.filter((model) => {
-        return model.id !== id;
-      })
-    )
-  }
+  // const deletemodel = async (id) => {
+  //   const response = await fetch(`http://localhost:8090/api/models/${id}/`, {
+  //     method: 'DELETE',
+  //     mode: "cors",
+  //     headers: {
+  //       "Content-Type": "application/json"
+  //     }
+  //   })
+  //   const data = await response.json()
+  //   setModels(
+  //     models.filter((model) => {
+  //       return model.id !== id;
+  //     })
+  //   )
+  // }
 
   return (
     <>
@@ -49,9 +49,6 @@ function ModelList() {
                 <td>{model.name}</td>
                 <td>{model.picture_url}</td>
                 <td>{model.manufacturer.name}</td>
-                <td>
-                  <button onClick={() => deletemodel(model.id)}>Delete</button>
-                </td>
               </tr>
             );
           })}
