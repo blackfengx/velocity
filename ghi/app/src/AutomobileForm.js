@@ -4,6 +4,7 @@ function AutomobileForm() {
   const [automobiles, setAutomobiles] = useState([])
   const [manufacturers, setManufacturers] = useState([])
   const [models, setModels] = useState([])
+
   const [formData, setFormData] = useState({
     vin: '',
     color: '',
