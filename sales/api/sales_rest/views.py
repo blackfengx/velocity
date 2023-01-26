@@ -92,3 +92,10 @@ def api_list_potential_customer(request, pk=id):
             encoder=PotentialCustomerListEncoder,
             safe=False,
         )
+
+
+@require_http_methods(["DELETE", "GET", "PUT", "POST"])
+def api_list_history(request, pk=id):
+    if request.method == "GET":
+        salesperson = Salesperson.objects.get(id=pk)
+        return JsonResponse({"salesperson": salesperson}, encoder=SalespersonListEncoder)
