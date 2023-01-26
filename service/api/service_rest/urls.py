@@ -1,7 +1,11 @@
 from django.urls import path
 
-#import a view
-from .views import api_list_appointments, api_list_technician, api_get_appointment, api_get_technician
+from .views import (
+    api_list_appointments,
+    api_list_technician,
+    api_get_appointment,
+    api_get_technician,
+)
 
 urlpatterns = [
     path("service/", api_list_appointments, name="api_list_appointments"),

@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from 'react';
 
 function AppointmentForm() {
-    // const [appointments, setAppointments] = useState([])
     const [automobiles, setAutomobiles] = useState([])
     const [technicians, setTechnicians] = useState([])
 
@@ -39,7 +38,6 @@ function AppointmentForm() {
         if (response.ok) {
             const data = await response.json();
             setAutomobiles(data.automobiles);
-            // console.log(data.autos)
         }
 
     }
@@ -48,19 +46,6 @@ function AppointmentForm() {
         getAutomobileData();
     }, []);
 
-    //   const getManufacturerData = async () => {
-    //     const url = 'http://localhost:8100/api/manufacturers/';
-    //     const response = await fetch(url);
-
-    //     if (response.ok) {
-    //       const data = await response.json();
-    //       setManufacturers(data.manufacturers);
-    //     }
-    //   }
-
-    //   useEffect(() => {
-    //     getManufacturerData();
-    //   }, []);
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -105,6 +90,7 @@ function AppointmentForm() {
 
 
     return (
+
         <div className="row">
             <div className="offset-3 col-6">
                 <div className="shadow p-4 mt-4">
@@ -130,16 +116,6 @@ function AppointmentForm() {
                             <input onChange={handleFormChange} value={formData.vin_num} placeholder="VIN" required type="text" name="vin_num" id="vin_num" className="form-control" />
                             <label htmlFor="name">VIN</label>
                         </div>
-                        {/* <div>
-                            <select onChange={handleFormChange} value={formData.vin_num} required name="vin_num" id="vin_num" className="form-select">
-                                <option value="">Choose a VIN</option>
-                                {automobiles.map(automobile => {
-                                    return (
-                                        <option key={automobile.autos.id} value={automobile.autos.vin}>{automobile.autos.vin}</option>
-                                    )
-                                })}
-                            </select>
-                        </div> */}
                         <br></br>
                         <div className="mb-3">
                             <select onChange={handleFormChange} value={formData.technician} required name="technician" id="technician" className="form-select">

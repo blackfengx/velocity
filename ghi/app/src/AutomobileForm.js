@@ -1,5 +1,4 @@
-
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 
 function AutomobileForm() {
   const [automobiles, setAutomobiles] = useState([])
@@ -9,7 +8,6 @@ function AutomobileForm() {
     vin: '',
     color: '',
     year: '',
-    // manufacturer: '',
     model_id: '',
   })
 
@@ -22,7 +20,6 @@ function AutomobileForm() {
     if (response.ok) {
       const data = await response.json();
       setModels(data.models);
-      console.log(data)
     }
   }
 
@@ -30,19 +27,6 @@ function AutomobileForm() {
     getModelData();
   }, []);
 
-//   const getManufacturerData = async () => {
-//     const url = 'http://localhost:8100/api/manufacturers/';
-//     const response = await fetch(url);
-
-//     if (response.ok) {
-//       const data = await response.json();
-//       setManufacturers(data.manufacturers);
-//     }
-//   }
-
-//   useEffect(() => {
-//     getManufacturerData();
-//   }, []);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -64,7 +48,6 @@ function AutomobileForm() {
         vin: '',
         color: '',
         year: '',
-        // manufacturer: '',
         model_id: '',
       });
     }
@@ -102,16 +85,6 @@ function AutomobileForm() {
               <input onChange={handleFormChange} value={formData.year} placeholder="Year" required type="text" name="year" id="year" className="form-control" />
               <label htmlFor="name">Year</label>
             </div>
-            {/* <div className="mb-3">
-              <select onChange={handleFormChange} value={formData.manufacturer.name} required name="manufacturer_id" id="manufacturer_id" className="form-select">
-                <option value="">Choose a manufacturer</option>
-                {manufacturers.map(manufacturer => {
-                  return (
-                    <option key={manufacturer.id} value={manufacturer.id}>{manufacturer.name}</option>
-                  )
-                })}
-              </select>
-            </div> */}
             <div>
               <select onChange={handleFormChange} value={formData.model_id} required name="model_id" id="model_id" className="form-select">
                 <option value="">Choose a Model</option>
@@ -122,6 +95,7 @@ function AutomobileForm() {
                 })}
               </select>
             </div>
+            <br></br>
             <button className="btn btn-primary">Create</button>
           </form>
         </div>
