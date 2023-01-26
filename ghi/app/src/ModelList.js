@@ -53,7 +53,6 @@ function ModelList() {
                   <td>{ model.manufacturer.name }</td>
                   <td>
                     <button onClick={() => deletemodel(model.id)}>Delete</button>
-                    {/* <button onClick={() => editmodel(model.id)}>Edit</button> */}
                   </td>
                 </tr>
               );

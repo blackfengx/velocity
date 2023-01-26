@@ -16,6 +16,7 @@ class VinDetailEncoder(ModelEncoder):
 class TechnicianDetailEncoder(ModelEncoder):
     model = Technician
     properties = [
+        "id",
         "name",
         "employee_number",
     ]
@@ -23,6 +24,7 @@ class TechnicianDetailEncoder(ModelEncoder):
 class AppointmentDetailEncoder(ModelEncoder):
     model = Appointment
     properties = [
+        "id",
         "owner_name",
         "date",
         "time",
@@ -60,19 +62,32 @@ def api_list_appointments(request, pk=id):
         )
 
 
-    # @require_http_methods(["DELETE", "GET", "POST"])
-    # def api_list_sales_record(request, pk=id):
-    #     if request.method == "GET":
-    #         sales_record = SalesRecord.objects.all()
-    #         return JsonResponse({"potential_customer": potential_customer},
-    #         encoder=PotentialCustomerListEncoder)
-    #     content = json.loads(request.body)
-    #     salesrecord = SalesRecord.objects.create(**content)
-    #     return JsonResponse(
-    #         salesrecord,
-    #         encoder=SalesRecordListEncoder,
-    #         safe=False,
-    #     )
+@require_http_methods(["DELETE", "GET"])
+def api_get_appointment(request, pk=id):
+    if request.method == "GET":
+        try:
+            appointment = Appointment.objects.get(id=pk)
+            return JsonResponse(
+                {"appointment": appointment},
+                encoder=AppointmentDetailEncoder,
+                safe=False
+                )
+        except Appointment.DoesNotExist:
+            response = JsonResponse({"message": "Does not exist"})
+            response.status_code = 404
+            return response
+    else:
+        try:
+            appointment = Appointment.objects.get(id=pk)
+            appointment.delete()
+            return JsonResponse(
+                appointment,
+                encoder=AppointmentDetailEncoder,
+                safe=False,
+            )
+        except Appointment.DoesNotExist:
+            return JsonResponse({"message": "Does not exist"})
+
 
 
 @require_http_methods(["POST", "GET"])
@@ -90,24 +105,28 @@ def api_list_technician(request, pk=id):
             safe=False,
         )
 
-
-    # if request.method == "GET":
-    #     technicians = Technician.objects.all()
-    #     return JsonResponse({"technicians": technicians}, encoder=TechnicianDetailEncoder)
-    # else:
-    #     content = json.loads(request.body)
-    #     try:
-    #         location_href = content["location"]
-    #         location = LocationVO.objects.get(import_href=location_href)
-    #         content["location"] = location
-    #     except LocationVO.DoesNotExist:
-    #         return JsonResponse(
-    #             {"message": "Invalid Hat"},
-    #             status=400,
-    #         )
-    #     hats = Hat.objects.create(**content)
-    #     return JsonResponse(
-    #         hats,
-    #         encoder=HatListEncoder,
-    #         safe=False,
-    #     )
+@require_http_methods(["DELETE", "GET"])
+def api_get_technician(request, pk=id):
+    if request.method == "GET":
+        try:
+            technician = Technician.objects.get(id=pk)
+            return JsonResponse(
+                {"technician": technician},
+                encoder=TechnicianDetailEncoder,
+                safe=False
+                )
+        except Technician.DoesNotExist:
+            response = JsonResponse({"message": "Does not exist"})
+            response.status_code = 404
+            return response
+    else:
+        try:
+            technician = Technician.objects.get(id=pk)
+            technician.delete()
+            return JsonResponse(
+                technician,
+                encoder=AppointmentDetailEncoder,
+                safe=False,
+            )
+        except Appointment.DoesNotExist:
+            return JsonResponse({"message": "Does not exist"})

@@ -22,6 +22,7 @@ function AutomobileForm() {
     if (response.ok) {
       const data = await response.json();
       setModels(data.models);
+      console.log(data)
     }
   }
 
@@ -112,7 +113,7 @@ function AutomobileForm() {
               </select>
             </div> */}
             <div>
-              <select onChange={handleFormChange} value={formData.model_id.name} required name="model_id" id="model_id" className="form-select">
+              <select onChange={handleFormChange} value={formData.model_id} required name="model_id" id="model_id" className="form-select">
                 <option value="">Choose a Model</option>
                 {models.map(model => {
                   return (
