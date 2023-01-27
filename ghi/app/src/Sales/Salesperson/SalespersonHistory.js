@@ -50,6 +50,9 @@ function SalespersonHistory() {
 
     return (
         <>
+            <br></br>
+            <h1>Salesperson History</h1>
+            <br></br>
             <select onChange={handleChange} value={formData.salesperson.name} required name="salesperson_name" id="salesperson_name" className="form-select">
                 <option value="">Choose a Salesperson</option>
                 {sales_record.map(sales_record => {
@@ -58,9 +61,9 @@ function SalespersonHistory() {
                   )
                 })}
             </select>
-
         <table className="table table-striped">
             <thead>
+
                 <tr>
                     <th>Automobile</th>
                     <th>Salesperson</th>

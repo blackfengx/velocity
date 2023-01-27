@@ -21,8 +21,8 @@ function SalespersonList() {
         <>
         <table className="table table-striped">
             <thead>
-            <br></br>
-            <h1>Salespeople</h1>
+                <br></br>
+                    <h1>Salespeople</h1>
                 <tr>
                     <th>Name</th>
                     <th>Employee Number</th>

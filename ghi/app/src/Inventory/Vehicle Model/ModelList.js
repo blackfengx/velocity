@@ -20,8 +20,8 @@ function ModelList() {
     <>
       <table className="table table-striped">
         <thead>
-        <br></br>
-        <h1>Vehicle Models</h1>
+          <br></br>
+            <h1>Vehicle Models</h1>
           <tr>
             <th>Name</th>
             <th>Picture URL</th>

@@ -35,7 +35,7 @@ function Nav() {
               <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li><a className="dropdown-menu dropdown-submenu">Inventory</a></li>
                 <li><a className="dropdown-item" href="http://localhost:3000/potentialcustomer">List Potential Customers</a></li>
-                <li><a className="dropdown-item" href="http://localhost:3000/potentialcustomer/create">Create Potential Customers</a></li>
+                <li><a className="dropdown-item" href="http://localhost:3000/potentialcustomer/create">Create a Potential Customer</a></li>
                 <li><a className="dropdown-item" href="http://localhost:3000/salesperson">List Salespeople</a></li>
                 <li><a className="dropdown-item" href="http://localhost:3000/salesperson/history">List Salesperson History</a></li>
                 <li><a className="dropdown-item" href="http://localhost:3000/salesperson/create">Create a Salesperson</a></li>

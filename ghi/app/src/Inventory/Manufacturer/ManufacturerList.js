@@ -36,8 +36,8 @@ function ManufacturerList() {
     <>
       <table className="table table-striped">
         <thead>
-        <br></br>
-        <h1>Manufacturers</h1>
+          <br></br>
+            <h1>Manufacturers</h1>
           <tr>
             <th>Name</th>
           </tr>

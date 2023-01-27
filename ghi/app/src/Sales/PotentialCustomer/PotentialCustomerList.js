@@ -21,8 +21,8 @@ function PotentialCustomerList() {
         <>
         <table className="table table-striped">
             <thead>
-            <br></br>
-            <h1>Potential Customers</h1>
+                <br></br>
+                    <h1>Potential Customers</h1>
                 <tr>
                     <th>Name</th>
                     <th>Address</th>
