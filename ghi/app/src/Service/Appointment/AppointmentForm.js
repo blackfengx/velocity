@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 
 function AppointmentForm() {
@@ -28,7 +27,6 @@ function AppointmentForm() {
     useEffect(() => {
         getTechnicianData();
     }, []);
-
 
 
     const getAutomobileData = async () => {
@@ -84,7 +82,6 @@ function AppointmentForm() {
             [inputName]: value
         });
     }
-
 
     return (
         <div className="row">

@@ -13,7 +13,6 @@ function AutomobileForm() {
   })
 
 
-
   const getModelData = async () => {
     const url = 'http://localhost:8100/api/models/';
     const response = await fetch(url);
@@ -63,10 +62,6 @@ function AutomobileForm() {
       [inputName]: value
     });
   }
-
-
-
-
 
   return (
     <div className="row">

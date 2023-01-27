@@ -1,6 +1,7 @@
 from django.db import models
 from django.urls import reverse
 
+
 class AutomobileVO(models.Model):
     import_href = models.CharField(max_length=200, unique=True)
     color = models.CharField(max_length=50)
@@ -24,17 +25,17 @@ class SalesRecord(models.Model):
         AutomobileVO,
         related_name="automobile",
         on_delete=models.CASCADE,
-        )
+    )
     salesperson = models.ForeignKey(
         Salesperson,
         related_name="salesperson",
         on_delete=models.CASCADE,
-        )
+    )
     customer = models.ForeignKey(
         PotentialCustomer,
         related_name="customer",
         on_delete=models.CASCADE,
-        )
+    )
     sale_price = models.CharField(max_length=100)
 
     def get_api_url(self):
