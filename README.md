@@ -13,8 +13,8 @@ React Front-End / Django Back-End / PostgreSQL
 
 Back End
     models.py
-    - Created an AutomobileVO that is used in the poller so that the inventory microservice can communicate with the service microservice.
-    -Technician and Appointment model created within the "Service" microservice in order to populate a list and form on on the front end using react.
+    - Created an AutomobileVO that is used in the poller so that the inventory microservice can communicate with the Service microservice.
+    -Technician and Appointment model created within the "Service" microservice in order to populate a list and form on the front end using react.
 
     views.py
     - Views created for all models that allow for creation, listing, and deletion on the front end for their respective models.
