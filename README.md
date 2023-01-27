@@ -27,7 +27,7 @@ Front End
     - Created a Filter bar which allows the user to filter appointments by VIN on the List Appointments page.
 
 
-## Sales microservice
+## Sales microservice :)
 
  # Back End:
 
