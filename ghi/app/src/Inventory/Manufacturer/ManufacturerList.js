@@ -39,12 +39,6 @@ function ManufacturerList() {
       <br></br>
       <table className="table table-striped shadow p-3 mb-5 bg-white rounded">
         <thead>
-<<<<<<< HEAD
-          <br></br>
-            <h1>Manufacturers</h1>
-=======
-
->>>>>>> bde7ee106a6edba98e31bb6f17d9762c146d92b7
           <tr>
             <th>Name</th>
           </tr>
