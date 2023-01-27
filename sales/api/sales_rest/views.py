@@ -13,6 +13,7 @@ class SalespersonEncoder(ModelEncoder):
         "employee_number",
     ]
 
+
 class PotentialCustomerEncoder(ModelEncoder):
     model = PotentialCustomer
     properties = [
@@ -21,11 +22,13 @@ class PotentialCustomerEncoder(ModelEncoder):
         "phone_number",
     ]
 
+
 class AutomobileDetailEncoder(ModelEncoder):
     model = AutomobileVO
     properties = [
         "vin"
     ]
+
 
 class SalespersonListEncoder(ModelEncoder):
     model = Salesperson
@@ -35,6 +38,7 @@ class SalespersonListEncoder(ModelEncoder):
         "id"
     ]
 
+
 class PotentialCustomerListEncoder(ModelEncoder):
     model = PotentialCustomer
     properties = [
@@ -43,6 +47,7 @@ class PotentialCustomerListEncoder(ModelEncoder):
         "phone_number",
         "id"
     ]
+
 
 class SalesRecordListEncoder(ModelEncoder):
     model = SalesRecord
@@ -74,6 +79,7 @@ def api_list_salesperson(request, pk=id):
             safe=False,
         )
 
+
 @require_http_methods(["GET", "POST"])
 def api_list_sales_record(request, pk=id):
     if request.method == "GET":
@@ -97,6 +103,7 @@ def api_list_sales_record(request, pk=id):
             encoder=SalesRecordListEncoder,
             safe=False,
     )
+
 
 @require_http_methods(["DELETE", "GET", "PUT", "POST"])
 def api_list_potential_customer(request, pk=id):
