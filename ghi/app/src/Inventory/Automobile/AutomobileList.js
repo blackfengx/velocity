@@ -34,10 +34,11 @@ function AutomobileList() {
 
   return (
     <>
-      <table className="table table-striped">
+      <br></br>
+      <h1>Automobiles</h1>
+      <br></br>
+      <table className="table table-striped shadow p-3 mb-5 bg-white rounded">
         <thead>
-        <br></br>
-        <h1>Automobiles</h1>
           <tr>
             <th>VIN</th>
             <th>Color</th>
@@ -56,7 +57,7 @@ function AutomobileList() {
                 <td>{auto.model.name}</td>
                 <td>{auto.model.manufacturer.name}</td>
                 <td>
-                  <button onClick={() => deleteAutomobile(auto.id)}>Delete</button>
+                  <button className="btn btn-danger" onClick={() => deleteAutomobile(auto.id)}>Delete</button>
                 </td>
               </tr>
             );

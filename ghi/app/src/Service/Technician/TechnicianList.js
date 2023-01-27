@@ -35,7 +35,10 @@ function TechnicianList() {
 
   return (
     <>
-      <table className="table table-striped">
+    <br></br>
+    <h1>Technicians</h1>
+      <br></br>
+      <table className="table table-striped shadow p-3 mb-5 bg-white rounded">
         <thead>
           <tr>
             <th>Name</th>
@@ -49,7 +52,7 @@ function TechnicianList() {
                 <td>{technician.name}</td>
                 <td>{technician.employee_number}</td>
                 <td>
-                  <button onClick={() => deletetechnician(technician.id)}>Delete</button>
+                  <button className="btn btn-danger" onClick={() => deletetechnician(technician.id)}>Delete</button>
                 </td>
               </tr>
             );

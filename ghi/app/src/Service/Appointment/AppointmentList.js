@@ -44,11 +44,13 @@ function AppointmentList() {
   return (
     <>
       <br></br>
+      <h1>Appointments</h1>
+      <br></br>
       <div className="form-floating mb-3">
-        <input placeholder="VIN" onChange={handleChange} required type="text" className="form-control" />
-        <label htmlFor="name">VIN</label>
+        <input placeholder="Search by VIN" onChange={handleChange} required type="text" className="form-control" />
+        <label htmlFor="name">Search by VIN</label>
       </div>
-      <table className="table table-striped">
+      <table className="table table-striped shadow p-3 mb-5 bg-white rounded">
         <thead>
           <tr>
             <th>Owner Name</th>
@@ -70,10 +72,10 @@ function AppointmentList() {
                 <td>{appointment.reason}</td>
                 <td>{appointment.vin_num.vin}</td>
                 <td>
-                  <button onClick={() => deleteAppointment(appointment.id)}>Cancel</button>
+                  <button className="btn btn-danger" onClick={() => deleteAppointment(appointment.id)}>Cancel</button>
                 </td>
                 <td>
-                  <button onClick={() => deleteAppointment(appointment.id)}>Completed</button>
+                  <button className="btn btn-success" onClick={() => deleteAppointment(appointment.id)}>Completed</button>
                 </td>
               </tr>
             );

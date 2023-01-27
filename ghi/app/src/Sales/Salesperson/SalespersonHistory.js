@@ -22,7 +22,7 @@ function SalespersonHistory() {
         }
     }
 
-    useEffect(()=>{
+    useEffect(() => {
         getSalesData()
     }, [])
 
@@ -35,54 +35,57 @@ function SalespersonHistory() {
         }
     }
 
-    useEffect(()=>{
+    useEffect(() => {
         getSalespersonData()
     }, [])
 
     const handleChange = (e) => {
         setFilterValue(e.target.value)
-      }
+    }
 
-      const filteredName = () => {
+    const filteredName = () => {
         return sales_record.filter(sales_record => sales_record.salesperson.name.includes(filterValue))
-      }
+    }
 
 
     return (
         <>
+            <br></br>
+            <h1>Salesperson History</h1>
+            <br></br>
             <select onChange={handleChange} value={formData.salesperson.name} required name="salesperson_name" id="salesperson_name" className="form-select">
                 <option value="">Choose a Salesperson</option>
                 {sales_record.map(sales_record => {
-                  return (
-                    <option key={sales_record.salesperson.name} value={sales_record.salesperson.name}>{sales_record.salesperson.name}</option>
-                  )
+                    return (
+                        <option key={sales_record.salesperson.name} value={sales_record.salesperson.name}>{sales_record.salesperson.name}</option>
+                    )
                 })}
             </select>
-
-        <table className="table table-striped">
-            <thead>
-                <tr>
-                    <th>Automobile</th>
-                    <th>Salesperson</th>
-                    <th>Employee Number</th>
-                    <th>Customer</th>
-                    <th>Sale Price</th>
-                </tr>
-            </thead>
-        <tbody>
-        {filteredName().map(sales_record => {
-        return (
-            <tr key={sales_record.id}>
-              <td>{ sales_record.automobile.vin }</td>
-              <td>{ sales_record.salesperson.name }</td>
-              <td>{ sales_record.salesperson.employee_number }</td>
-              <td>{ sales_record.customer.name }</td>
-              <td>{ sales_record.sale_price }</td>
-            </tr>
-          );
-        })}
-      </tbody>
-    </table>
+            <br></br>
+            <table className="table table-striped shadow p-3 mb-5 bg-white rounded">
+                <thead>
+                    <tr>
+                        <th>Automobile</th>
+                        <th>Salesperson</th>
+                        <th>Employee Number</th>
+                        <th>Customer</th>
+                        <th>Sale Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {filteredName().map(sales_record => {
+                        return (
+                            <tr key={sales_record.id}>
+                                <td>{sales_record.automobile.vin}</td>
+                                <td>{sales_record.salesperson.name}</td>
+                                <td>{sales_record.salesperson.employee_number}</td>
+                                <td>{sales_record.customer.name}</td>
+                                <td>{sales_record.sale_price}</td>
+                            </tr>
+                        );
+                    })}
+                </tbody>
+            </table>
         </>
     )
 }

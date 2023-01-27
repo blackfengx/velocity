@@ -13,35 +13,36 @@ function SalespersonList() {
         }
     }
 
-    useEffect(()=>{
+    useEffect(() => {
         getData()
     }, [])
 
     return (
         <>
-        <table className="table table-striped">
-            <thead>
             <br></br>
             <h1>Salespeople</h1>
-                <tr>
-                    <th>Name</th>
-                    <th>Employee Number</th>
-                </tr>
-            </thead>
-        <tbody>
-        {salesperson.map(salesperson => {
-          return (
-            <tr key={salesperson.name}>
-              <td>{ salesperson.name }</td>
-              <td>{ salesperson.employee_number }</td>
-            </tr>
-          );
-        })}
-      </tbody>
-    </table>
-    <div className="d-grid gap-2 d-sm-flex justify-content-sm-center">
-        <Link to="/salesperson/create" className="btn btn-primary btn-lg px-4 gap-3">Create a Salesperson</Link>
-    </div>
+            <br></br>
+            <table className="table table-striped shadow p-3 mb-5 bg-white rounded">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Employee Number</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {salesperson.map(salesperson => {
+                        return (
+                            <tr key={salesperson.name}>
+                                <td>{salesperson.name}</td>
+                                <td>{salesperson.employee_number}</td>
+                            </tr>
+                        );
+                    })}
+                </tbody>
+            </table>
+            <div className="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                <Link to="/salesperson/create" className="btn btn-primary btn-lg px-4 gap-3">Create a Salesperson</Link>
+            </div>
         </>
     )
 }

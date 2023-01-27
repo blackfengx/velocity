@@ -18,10 +18,12 @@ function ModelList() {
 
   return (
     <>
-      <table className="table table-striped">
+      <br></br>
+      <h1>Vehicle Models</h1>
+      <br></br>
+      <table className="table table-striped shadow p-3 mb-5 bg-white rounded">
         <thead>
-        <br></br>
-        <h1>Vehicle Models</h1>
+
           <tr>
             <th>Name</th>
             <th>Picture URL</th>
