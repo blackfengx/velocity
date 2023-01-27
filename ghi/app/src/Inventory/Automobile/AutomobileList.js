@@ -36,6 +36,8 @@ function AutomobileList() {
     <>
       <table className="table table-striped">
         <thead>
+        <br></br>
+        <h1>Automobiles</h1>
           <tr>
             <th>VIN</th>
             <th>Color</th>

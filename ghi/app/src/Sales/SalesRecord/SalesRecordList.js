@@ -21,6 +21,8 @@ function SalesRecordList() {
         <>
         <table className="table table-striped">
             <thead>
+            <br></br>
+            <h1>Sales Records</h1>
                 <tr>
                     <th>Automobile</th>
                     <th>Salesperson</th>
