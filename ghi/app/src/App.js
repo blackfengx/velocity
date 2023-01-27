@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import MainPage from './MainPage';
-import SalespersonList from './SalespersonList';
-import SalespersonForm from './SalespersonForm';
+import SalespersonList from './Sales/Salesperson/SalespersonList';
+import SalespersonForm from './Sales/Salesperson/SalespersonForm';
 import ManufacturerForm from './ManufacturerForm';
 import ManufacturerList from './ManufacturerList';
 import TechnicianList from './TechnicianList';
@@ -9,15 +9,15 @@ import Nav from './Nav';
 import TechnicianForm from './TechnicianForm';
 import ModelList from './ModelList';
 import ModelForm from './ModelForm';
-import PotentialCustomerList from './PotentialCustomerList';
-import PotentialCustomerForm from './PotentialCustomerForm';
-import SalesRecordList from './SalesRecordList';
-import SalesRecordForm from './SalesRecordForm';
+import PotentialCustomerList from './Sales/PotentialCustomer/PotentialCustomerList';
+import PotentialCustomerForm from './Sales/PotentialCustomer/PotentialCustomerForm';
+import SalesRecordList from './Sales/SalesRecord.js/SalesRecordList';
+import SalesRecordForm from './Sales/SalesRecord.js/SalesRecordForm';
 import AutomobileList from './AutomobileList';
 import AutomobileForm from './AutomobileForm';
 import AppointmentList from './AppointmentList';
 import AppointmentForm from './AppointmentForm';
-import SalespersonHistory from './SalespersonHistory';
+import SalespersonHistory from './Sales/Salesperson/SalespersonHistory';
 
 
 function App() {
