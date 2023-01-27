@@ -23,7 +23,6 @@ function ModelList() {
       <br></br>
       <table className="table table-striped shadow p-3 mb-5 bg-white rounded">
         <thead>
-
           <tr>
             <th>Name</th>
             <th>Picture URL</th>
