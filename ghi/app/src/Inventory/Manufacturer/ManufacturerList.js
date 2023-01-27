@@ -34,10 +34,17 @@ function ManufacturerList() {
 
   return (
     <>
-      <table className="table table-striped">
+      <br></br>
+      <h1>Manufacturers</h1>
+      <br></br>
+      <table className="table table-striped shadow p-3 mb-5 bg-white rounded">
         <thead>
+<<<<<<< HEAD
           <br></br>
             <h1>Manufacturers</h1>
+=======
+
+>>>>>>> bde7ee106a6edba98e31bb6f17d9762c146d92b7
           <tr>
             <th>Name</th>
           </tr>
@@ -48,7 +55,7 @@ function ManufacturerList() {
               <tr key={manufacturer.href}>
                 <td>{manufacturer.name}</td>
                 <td className="p-2 bd-highlight">
-                  <button onClick={() => deleteHat(manufacturer.id)}>Delete</button>
+                  <button className="btn btn-danger" onClick={() => deleteHat(manufacturer.id)}>Delete</button>
                 </td>
               </tr>
             );

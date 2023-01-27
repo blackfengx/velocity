@@ -21,7 +21,7 @@ function Nav() {
               <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li><a className="dropdown-menu dropdown-submenu">Inventory</a></li>
                 <li><a className="dropdown-item" href="http://localhost:3000/automobile">List Automobiles</a></li>
-                <li><a className="dropdown-item" href="http://localhost:3000/automobile/create">Create Automobiles</a></li>
+                <li><a className="dropdown-item" href="http://localhost:3000/automobile/create">Create an Automobile</a></li>
                 <li><a className="dropdown-item" href="http://localhost:3000/manufacturers">List Manufacturers</a></li>
                 <li><a className="dropdown-item" href="http://localhost:3000/manufacturers/create">Create a Manufacturer</a></li>
                 <li><a className="dropdown-item" href="http://localhost:3000/vehicle/model">List Vehicle Models</a></li>
@@ -50,8 +50,8 @@ function Nav() {
               <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li><a className="dropdown-menu dropdown-submenu">Appointments</a></li>
                 <li><a className="dropdown-item" href="http://localhost:3000/appointment">List Appointments</a></li>
-                <li><a className="dropdown-item" href="http://localhost:3000/appointment/create">Create Appointment</a></li>
-                <li><a className="dropdown-item" href="http://localhost:3000/technicians">Technicians</a></li>
+                <li><a className="dropdown-item" href="http://localhost:3000/appointment/create">Create an Appointment</a></li>
+                <li><a className="dropdown-item" href="http://localhost:3000/technicians">List Technicians</a></li>
                 <li><a className="dropdown-item" href="http://localhost:3000/technicians/create">Create a Technician</a></li>
               </ul>
             </li>

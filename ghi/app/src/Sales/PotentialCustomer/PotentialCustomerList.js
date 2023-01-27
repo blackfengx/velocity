@@ -13,39 +13,40 @@ function PotentialCustomerList() {
         }
     }
 
-    useEffect(()=>{
+    useEffect(() => {
         getData()
     }, [])
 
     return (
         <>
-        <table className="table table-striped">
-            <thead>
-                <br></br>
-                    <h1>Potential Customers</h1>
-                <tr>
-                    <th>Name</th>
-                    <th>Address</th>
-                    <th>Phone Number</th>
-                    <th>ID</th>
-                </tr>
-            </thead>
-        <tbody>
-        {potential_customer.map(potential_customer => {
-          return (
-            <tr key={potential_customer.name}>
-              <td>{ potential_customer.name }</td>
-              <td>{ potential_customer.address }</td>
-              <td>{ potential_customer.phone_number }</td>
-              <td>{ potential_customer.id }</td>
-            </tr>
-          );
-        })}
-      </tbody>
-    </table>
-    <div className="d-grid gap-2 d-sm-flex justify-content-sm-center">
-        <Link to="/potentialcustomer/create" className="btn btn-primary btn-lg px-4 gap-3">Create a Customer</Link>
-    </div>
+            <br></br>
+            <h1>Potential Customers</h1>
+            <br></br>
+            <table className="table table-striped shadow p-3 mb-5 bg-white rounded">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Address</th>
+                        <th>Phone Number</th>
+                        <th>ID</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {potential_customer.map(potential_customer => {
+                        return (
+                            <tr key={potential_customer.name}>
+                                <td>{potential_customer.name}</td>
+                                <td>{potential_customer.address}</td>
+                                <td>{potential_customer.phone_number}</td>
+                                <td>{potential_customer.id}</td>
+                            </tr>
+                        );
+                    })}
+                </tbody>
+            </table>
+            <div className="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                <Link to="/potentialcustomer/create" className="btn btn-primary btn-lg px-4 gap-3">Create a Customer</Link>
+            </div>
         </>
     )
 }
