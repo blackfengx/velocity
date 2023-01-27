@@ -5,7 +5,6 @@ import json
 from django.http import JsonResponse
 from common.json import ModelEncoder
 
-# Create your encoders here.
 
 class SalespersonEncoder(ModelEncoder):
     model = Salesperson
@@ -60,7 +59,6 @@ class SalesRecordListEncoder(ModelEncoder):
         "customer": PotentialCustomerEncoder(),
     }
 
-# Create your views here.
 
 @require_http_methods(["GET", "POST"])
 def api_list_salesperson(request, pk=id):

@@ -84,24 +84,7 @@ function SalespersonHistory() {
         })}
       </tbody>
     </table>
-    <div className="d-grid gap-2 d-sm-flex justify-content-sm-center">
-        <Link to="/salesrecord/create" className="btn btn-primary btn-lg px-4 gap-3">Create a Sale Record</Link>
-    </div>
         </>
     )
 }
 export default SalespersonHistory
-
-
-
-
-
-
-{/* <select onChange={handleChange} value={formData.name} required name="name" id="employee_number" className="form-select">
-                <option value="">Choose a Salesperson</option>
-                {salesperson.map(salesperson => {
-                  return (
-                    <option key={salesperson.id} value={salesperson.id}>{salesperson.name}</option>
-                  )
-                })}
-            </select> */}

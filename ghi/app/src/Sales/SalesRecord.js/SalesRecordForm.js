@@ -55,7 +55,7 @@ function SalesRecordForm() {
           <form onSubmit={handleSubmit} id="create-conference-form">
             <div className="form-floating mb-3">
               <input onChange={handleFormChange} value={formData.automobile} placeholder="Automobile" required type="text" name="automobile" id="automobile" className="form-control" />
-              <label htmlFor="name">Automobile</label>
+              <label htmlFor="name">Automobile (VIN Number)</label>
             </div>
             <div className="form-floating mb-3">
               <input onChange={handleFormChange} value={formData.salesperson} placeholder="Salesperson" required type="text" name="salesperson" id="salesperson" className="form-control" />
