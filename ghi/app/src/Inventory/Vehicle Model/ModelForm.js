@@ -8,7 +8,7 @@ function ModelForm() {
     picture_url: '',
     manufacturer_id: '',
   })
-
+  
   const getData = async () => {
     const url = 'http://localhost:8100/api/manufacturers/';
     const response = await fetch(url);

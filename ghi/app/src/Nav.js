@@ -14,56 +14,46 @@ function Nav() {
             <li className="nav-item">
               <NavLink className="nav-link active" aria-current="page" to="/">Home</NavLink>
             </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/salesperson">Salespeople</NavLink>
+            <li className="nav-item dropdown">
+              <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Inventory
+              </a>
+              <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a className="dropdown-menu dropdown-submenu">Inventory</a></li>
+                <li><a className="dropdown-item" href="http://localhost:3000/automobile">List Automobiles</a></li>
+                <li><a className="dropdown-item" href="http://localhost:3000/automobile/create">Create Automobiles</a></li>
+                <li><a className="dropdown-item" href="http://localhost:3000/manufacturers">List Manufacturers</a></li>
+                <li><a className="dropdown-item" href="http://localhost:3000/manufacturers/create">Create a Manufacturer</a></li>
+                <li><a className="dropdown-item" href="http://localhost:3000/vehicle/model">List Vehicle Models</a></li>
+                <li><a className="dropdown-item" href="http://localhost:3000/vehicle/model/create">Create a Vehicle Model</a></li>
+              </ul>
             </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/salesperson/create">Create a Salesperson</NavLink>
+            <li className="nav-item dropdown">
+              <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Sales
+              </a>
+              <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a className="dropdown-menu dropdown-submenu">Inventory</a></li>
+                <li><a className="dropdown-item" href="http://localhost:3000/potentialcustomer">List Potential Customers</a></li>
+                <li><a className="dropdown-item" href="http://localhost:3000/potentialcustomer/create">Create Potential Customers</a></li>
+                <li><a className="dropdown-item" href="http://localhost:3000/salesperson">List Salespeople</a></li>
+                <li><a className="dropdown-item" href="http://localhost:3000/salesperson/history">List Salesperson History</a></li>
+                <li><a className="dropdown-item" href="http://localhost:3000/salesperson/create">Create a Salesperson</a></li>
+                <li><a className="dropdown-item" href="http://localhost:3000/salesrecord">List Sales Records</a></li>
+                <li><a className="dropdown-item" href="http://localhost:3000/salesrecord/create">Create a Sales Record</a></li>
+              </ul>
             </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/salesperson/history">Salesperson History</NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/manufacturers">Manufacturers</NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/manufacturers/create">Create a Manufacturer</NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/technicians">Technicians</NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/technicians/create">Create a Technician</NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/vehicle/model">Models</NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/vehicle/model/create">Create a Model</NavLink>
-            </li>
-            <li>
-              <NavLink className="nav-link" to="/potentialcustomer">Potential Customer</NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/potentialcustomer/create">Create a Potential Customer</NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/salesrecord">Sales Records</NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/salesrecord/create">Create a Sale Record</NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/automobile">Automobiles</NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/automobile/create">Create an Automobile</NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/appointment">Appointments</NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/appointment/create">Create an Appointment</NavLink>
+            <li className="nav-item dropdown">
+              <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Service
+              </a>
+              <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a className="dropdown-menu dropdown-submenu">Appointments</a></li>
+                <li><a className="dropdown-item" href="http://localhost:3000/appointment">List Appointments</a></li>
+                <li><a className="dropdown-item" href="http://localhost:3000/appointment/create">Create Appointment</a></li>
+                <li><a className="dropdown-item" href="http://localhost:3000/technicians">Technicians</a></li>
+                <li><a className="dropdown-item" href="http://localhost:3000/technicians/create">Create a Technician</a></li>
+              </ul>
             </li>
           </ul>
         </div>

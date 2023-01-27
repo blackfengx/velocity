@@ -86,11 +86,7 @@ function AppointmentForm() {
     }
 
 
-
-
-
     return (
-
         <div className="row">
             <div className="offset-3 col-6">
                 <div className="shadow p-4 mt-4">
@@ -103,10 +99,12 @@ function AppointmentForm() {
                         <div className="form-floating mb-3">
                             <input onChange={handleFormChange} value={formData.date} placeholder="Date" required type="text" name="date" id="date" className="form-control" />
                             <label htmlFor="name">Date</label>
+                            <small id="emailHelp" class="form-text text-muted">YYYY-DD-MM</small>
                         </div>
                         <div className="form-floating mb-3">
                             <input onChange={handleFormChange} value={formData.time} placeholder="Time" required type="text" name="time" id="time" className="form-control" />
                             <label htmlFor="name">Time</label>
+                            <small id="emailHelp" class="form-text text-muted">HH:MM:SS</small>
                         </div>
                         <div className="form-floating mb-3">
                             <input onChange={handleFormChange} value={formData.reason} placeholder="Reason" required type="text" name="reason" id="reason" className="form-control" />
@@ -115,6 +113,7 @@ function AppointmentForm() {
                         <div className="form-floating mb-3">
                             <input onChange={handleFormChange} value={formData.vin_num} placeholder="VIN" required type="text" name="vin_num" id="vin_num" className="form-control" />
                             <label htmlFor="name">VIN</label>
+                            <small id="emailHelp" class="form-text text-muted">Please enter valid VIN from inventory</small>
                         </div>
                         <br></br>
                         <div className="mb-3">

@@ -40,7 +40,6 @@ function SalespersonHistory() {
     }, [])
 
     const handleChange = (e) => {
-        console.log(e.target.value)
         setFilterValue(e.target.value)
       }
 

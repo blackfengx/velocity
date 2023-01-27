@@ -59,7 +59,6 @@ class SalesRecordListEncoder(ModelEncoder):
         "customer": PotentialCustomerEncoder(),
     }
 
- # testtesteets
 @require_http_methods(["GET", "POST"])
 def api_list_salesperson(request, pk=id):
     if request.method == "GET":

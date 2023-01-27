@@ -2,11 +2,9 @@ function MainPage() {
   return (
     <div className="px-4 py-5 my-5 text-center">
       <h1 className="display-5 fw-bold">CarCar</h1>
-      <div className="col-lg-6 mx-auto">
-        <p className="lead mb-4">
-          The premiere solution for automobile dealership
-          management!
-        </p>
+      <div>
+        <h2>"Where Everyone is a VIP"</h2>
+          <img className="img-thumbnail" src="https://pictures.dealer.com/t/toyotadallasvtg/1488/e91a3dfb21391614dbcad8cd3da874a7x.jpg"/>
       </div>
     </div>
   );

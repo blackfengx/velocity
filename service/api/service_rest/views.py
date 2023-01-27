@@ -5,36 +5,10 @@ from django.http import JsonResponse
 from common.json import ModelEncoder
 import json
 
-
-class VinDetailEncoder(ModelEncoder):
-    model = AutomobileVO
-    properties = ["vin"]
-
-
-class TechnicianDetailEncoder(ModelEncoder):
-    model = Technician
-    properties = [
-        "id",
-        "name",
-        "employee_number",
-    ]
-
-
-class AppointmentDetailEncoder(ModelEncoder):
-    model = Appointment
-    properties = [
-        "id",
-        "owner_name",
-        "date",
-        "time",
-        "technician",
-        "reason",
-        "vin_num",
-    ]
-    encoders = {
-        "technician": TechnicianDetailEncoder(),
-        "vin_num": VinDetailEncoder(),
-    }
+from .encoders import (
+    TechnicianDetailEncoder,
+    AppointmentDetailEncoder,
+)
 
 
 @require_http_methods(["GET", "POST"])
@@ -123,7 +97,7 @@ def api_get_technician(request, pk=id):
             technician.delete()
             return JsonResponse(
                 technician,
-                encoder=AppointmentDetailEncoder,
+                encoder=TechnicianDetailEncoder,
                 safe=False,
             )
         except Technician.DoesNotExist:

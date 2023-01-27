@@ -16,22 +16,6 @@ function ModelList() {
     getData()
   }, [])
 
-  // const deletemodel = async (id) => {
-  //   const response = await fetch(`http://localhost:8090/api/models/${id}/`, {
-  //     method: 'DELETE',
-  //     mode: "cors",
-  //     headers: {
-  //       "Content-Type": "application/json"
-  //     }
-  //   })
-  //   const data = await response.json()
-  //   setModels(
-  //     models.filter((model) => {
-  //       return model.id !== id;
-  //     })
-  //   )
-  // }
-
   return (
     <>
       <table className="table table-striped">
@@ -47,7 +31,7 @@ function ModelList() {
             return (
               <tr key={model.href}>
                 <td>{model.name}</td>
-                <td>{model.picture_url}</td>
+                <td className='w-25 p-3' ><img className='img-thumbnail' src={model.picture_url} /></td>
                 <td>{model.manufacturer.name}</td>
               </tr>
             );
@@ -55,7 +39,7 @@ function ModelList() {
         </tbody>
       </table>
       <div className="d-grid gap-2 d-sm-flex justify-content-sm-center">
-        <Link to="/vehicle/model/create" className="btn btn-primary btn-lg px-4 gap-3">Create a New Vehicle Model</Link>
+        <Link to="/vehicle/model/create" className="btn btn-primary btn-lg px-4 gap-3">Create a Vehicle Model</Link>
       </div>
     </>
   );

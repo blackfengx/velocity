@@ -45,8 +45,7 @@ function ManufacturerList() {
             return (
               <tr key={manufacturer.href}>
                 <td>{manufacturer.name}</td>
-
-                <td>
+                <td className="p-2 bd-highlight">
                   <button onClick={() => deleteHat(manufacturer.id)}>Delete</button>
                 </td>
               </tr>
