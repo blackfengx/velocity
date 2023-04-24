@@ -18,6 +18,7 @@ import SalesRecordList from './Sales/SalesRecord/SalesRecordList';
 import SalesRecordForm from './Sales/SalesRecord/SalesRecordForm';
 import TechnicianList from './Service/Technician/TechnicianList';
 import TechnicianForm from './Service/Technician/TechnicianForm';
+import './index.css';
 
 
 function App() {
